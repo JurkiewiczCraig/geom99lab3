@@ -41,11 +41,11 @@
     "maxScale"
   ],
   "webMap": {
-    "default": "3dc5f3cbe012429ebff4fc1b871bebd0",
+    "default": "fab51bcfb5494089bf5d44c6c9116713",
     "fetch": true
   },
   "webScene": {
-    "default": "b7641f0a6bb641aebcd817f4f72fbe7b",
+    "default": "fab51bcfb5494089bf5d44c6c9116713",
     "fetch": true
   }
 }
