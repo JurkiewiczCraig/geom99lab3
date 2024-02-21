@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>ArcGIS Maps SDK for JavaScript Tutorials: Add a feature layer</title>
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.28/"></script>
+
+  <script>
+  require([
+    "esri/config",
+    "esri/Map",
+    "esri/views/MapView",
+
+    "esri/layers/FeatureLayer"
+
+  ], function(esriConfig, Map, MapView, FeatureLayer) {
+
+  esriConfig.apiKey = "AAPK7ea8e38f6b4b4f969ab170c41c01634akao_m4e5gL3AyABug_bvD9dN7kbXw7BSISXg4Y558XYUVj59ej6DtByYM0Cms4Tz";
+
+  const map = new Map({
+    basemap: "arcgis/topographic"
+  });
+
+  const view = new MapView({
+    container: "viewDiv",
+    map: map, 
+    center: [-118.80543,34.02700],
+    zoom: 3
+  });
+
+// Define a pop-up for Trailheads
+const names = {
+        "title": "Names",
+        "content": "<b>Name:</b> {PRNAME}"
+      }
+
+
+//Trailheads feature layer (points)
+  const canada = new FeatureLayer({
+    url: "https://utility.arcgis.com/usrsvcs/servers/b71e74e060894419b0e2c882052d79a1/rest/services/geom99am/CraigJCanada/MapServer/0",
+    outFields: ["PRNAME"],
+        popupTemplate: names
+  });
+
+  map.add(canada);
+
+
+
+  });
+</script>
+
+</head>
+<body>
+  <div id="viewDiv"></div>
+</body>
+</html>
