@@ -10,7 +10,9 @@
       margin: 0;
       height: 100%;
       width: 100%;
+      
     }
+    h1 {text-align: center;}
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.28/"></script>
@@ -39,7 +41,7 @@
     zoom: 3
   });
 
-// Define a pop-up for Trailheads
+// Define a pop-up for province name and Area in Meters
 const names = {
         "title": "Names",
         "content": "<b>Name:</b> {PRNAME} <br> <b>Area in Meters:</b> {Shape_STAr}"
@@ -58,7 +60,7 @@ const names = {
 
 
   });
-  h1 {text-align: center;}
+   
 </script>
 
 </head>
